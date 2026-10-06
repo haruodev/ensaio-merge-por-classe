@@ -1,0 +1,14 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main, sem-dono]
+permissions:
+  contents: read
+jobs:
+  test:
+    name: ci/test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostra quem disparou
+        run: echo "evento=${{ github.event_name }} ator=${{ github.actor }} disparou=${{ github.triggering_actor }}"
